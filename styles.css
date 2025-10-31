@@ -1,0 +1,65 @@
+:root{
+  --brand: #2563eb; /* better blue */
+  --glass: rgba(255,255,255,0.65);
+  --muted-light: rgba(255,255,255,0.75);
+  --bg-grad-1: #f8fafc;
+  --bg-grad-2: #eaf2ff;
+}
+
+*{box-sizing:border-box}
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  min-height: 100vh;
+  background: linear-gradient(135deg,var(--bg-grad-1),var(--bg-grad-2));
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* card + glass look */
+.glass-card {
+  border-radius: 14px;
+  background: var(--glass);
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+/* subtle animated entrance */
+.animated-card {
+  transform: translateY(16px);
+  opacity: 0;
+  animation: floatIn 600ms cubic-bezier(0.2,0.9,0.2,1) forwards;
+}
+@keyframes floatIn {
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* logo circle */
+.logo-circle{
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#ffffff,#e9f1ff);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--brand);
+  font-size: 28px;
+  box-shadow: 0 8px 30px rgba(37,99,235,0.12);
+  margin: 0 auto;
+}
+
+/* buttons */
+.btn-primary {
+  background: linear-gradient(90deg,var(--brand),#1d4ed8);
+  border: none;
+  box-shadow: 0 8px 20px rgba(37,99,235,0.12);
+}
+.btn-light {
+  background: rgba(255,255,255,0.92);
+}
+
+/* small screens adjustments */
+@media (max-width: 420px) {
+  .card-body { padding: 1rem; }
+  .logo-circle { width:54px; height:54px; font-size:24px; }
+}
